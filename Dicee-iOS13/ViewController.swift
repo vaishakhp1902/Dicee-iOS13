@@ -9,12 +9,28 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
 
+    // editor ->assiatant to  drag and drop image viewer into view controller
+
+    
+    @IBOutlet weak var diceImageViewTwo: UIImageView!
+    
+    @IBOutlet weak var diceimageOnev2: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        diceimageOnev2.image = #imageLiteral(resourceName: "DiceSix")
+        diceimageOnev2.alpha = 0.5
+        diceImageViewTwo.image = #imageLiteral(resourceName: "DiceSix")
+        diceImageViewTwo.alpha = 0.5
     }
 
 
+    @IBAction func rollButtonPressed(_ sender: UIButton) {
+        diceImageViewTwo.image = #imageLiteral(resourceName: "DiceFour")
+        diceimageOnev2.image = #imageLiteral(resourceName: "DiceFour")
+
+        
+    }
 }
 
