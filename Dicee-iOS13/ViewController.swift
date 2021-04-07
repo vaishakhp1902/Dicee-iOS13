@@ -17,19 +17,20 @@ class ViewController: UIViewController {
     @IBOutlet weak var diceImageViewTwo: UIImageView!
     
     @IBOutlet weak var diceimageOnev2: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        diceimageOnev2.image = #imageLiteral(resourceName: "DiceSix")
-        diceimageOnev2.alpha = 0.5
-        diceImageViewTwo.image = #imageLiteral(resourceName: "DiceSix")
-        diceImageViewTwo.alpha = 0.5
     }
 
 
     @IBAction func rollButtonPressed(_ sender: UIButton) {
-        diceImageViewTwo.image = #imageLiteral(resourceName: "DiceFour")
-        diceimageOnev2.image = #imageLiteral(resourceName: "DiceFour")
-
+        let diceArray = [ #imageLiteral(resourceName: "DiceOne") , #imageLiteral(resourceName: "DiceTwo") , #imageLiteral(resourceName: "DiceThree") , #imageLiteral(resourceName: "DiceFour") , #imageLiteral(resourceName: "DiceFive") , #imageLiteral(resourceName: "DiceSix") ]
+        diceImageViewTwo.image =  diceArray.randomElement()
+        diceimageOnev2.image = diceArray [Int.random(in: 0...5)]
+        
+        
+        
+        
         
     }
 }
